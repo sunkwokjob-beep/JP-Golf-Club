@@ -11,7 +11,7 @@ import { routes } from "@/lib/routes";
 
 export default function Home() {
   const newProducts = getFeaturedProducts("new").slice(0, 4);
-  const preOwnedProducts = getFeaturedProducts("pre-owned").slice(0, 4);
+  const preOwnedProducts = getFeaturedProducts("preowned").slice(0, 4);
 
   return (
     <>

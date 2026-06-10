@@ -2,6 +2,7 @@ import type { NavItem } from "@/types/navigation";
 
 export const primaryNavigation: NavItem[] = [
   { label: "首頁", href: "/" },
+  { label: "所有商品", href: "/products" },
   { label: "新品球杆", href: "/new-clubs" },
   { label: "二手精選", href: "/pre-owned" },
   { label: "品牌", href: "/brand" },

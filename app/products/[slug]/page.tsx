@@ -41,7 +41,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     offers: {
       "@type": "Offer",
       priceCurrency: "HKD",
-      price: product.priceHKD,
+      price: product.price,
       availability: "https://schema.org/InStock",
     },
   };

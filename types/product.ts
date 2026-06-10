@@ -1,32 +1,57 @@
-export type ProductCondition = "new" | "pre-owned";
+export type ProductCondition = "new" | "preowned";
 
-export type StockStatus = "in-stock" | "limited" | "reserved";
+export type ProductRank = "S" | "A" | "B" | "C" | null;
+
+export type ProductStatus = "available" | "reserved" | "sold";
+
+export type ProductCurrency = "HKD";
 
 export type ProductSpecs = {
+  clubType: string;
   shaft: string;
   flex: string;
   loft: string;
   length: string;
   handedness: string;
-  conditionGrade?: string;
+  setComposition?: string;
+  grip?: string;
+  headcover?: string;
+  year?: string;
+  origin: string;
 };
 
 export type Product = {
   id: string;
   slug: string;
+  sku: string;
   name: string;
   brand: string;
+  model: string;
   category: string;
   condition: ProductCondition;
-  priceHKD: number;
-  originalPriceHKD?: number;
+  rank: ProductRank;
+  price: number;
+  originalPrice: number | null;
+  currency: ProductCurrency;
+  stock: number;
+  status: ProductStatus;
   images: string[];
-  badge: string;
-  stockStatus: StockStatus;
+  tags: string[];
   specs: ProductSpecs;
   description: string;
   inspectionNotes: string;
-  featured: boolean;
+  isFeatured: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ProductSort = "newest" | "price-asc" | "price-desc";
+
+export type ProductFilters = {
+  brand?: string;
+  category?: string;
+  condition?: ProductCondition;
+  sort?: ProductSort;
 };
 
 export type Category = {

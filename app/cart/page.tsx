@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { LinkButton } from "@/components/ui/Button";
+import { ProductImage } from "@/components/products/ProductImage";
 import { products } from "@/data/products";
 import { formatHKD } from "@/lib/format";
+import { getConditionLabel } from "@/lib/product-utils";
 import { whatsappProductUrl } from "@/lib/routes";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function CartPage() {
   const cartItems = products.slice(0, 2);
-  const total = cartItems.reduce((sum, item) => sum + item.priceHKD, 0);
+  const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <section className="jp-section jp-paper">
@@ -25,14 +26,14 @@ export default function CartPage() {
             {cartItems.map((item) => (
               <div key={item.id} className="grid gap-4 rounded-lg border border-light-grey bg-white p-4 shadow-sm sm:grid-cols-[140px_1fr_auto]">
                 <div className="relative aspect-[4/3] overflow-hidden rounded bg-pearl-white">
-                  <Image src={item.images[0]} alt={item.name} fill className="object-contain p-3" />
+                  <ProductImage src={item.images[0]} alt={item.name} category={item.category} className="p-3" />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-champagne-gold">{item.brand}</p>
                   <h2 className="mt-2 font-serif text-2xl font-bold text-jp-green">{item.name}</h2>
-                  <p className="mt-2 text-sm text-charcoal/60">數量 1 ・ {item.condition === "new" ? "全新" : "二手精選"}</p>
+                  <p className="mt-2 text-sm text-charcoal/60">數量 1 ・ {getConditionLabel(item.condition)}</p>
                 </div>
-                <p className="font-bold text-jp-green">{formatHKD(item.priceHKD)}</p>
+                <p className="font-bold text-jp-green">{formatHKD(item.price)}</p>
               </div>
             ))}
           </div>

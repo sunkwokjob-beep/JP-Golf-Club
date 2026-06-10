@@ -24,15 +24,14 @@
   --color-light-grey: var(--light-grey);
   --color-line-gold: var(--line-gold);
   --color-success-green: var(--success-green);
-  --font-sans: var(--font-noto-sans-tc);
-  --font-serif: var(--font-noto-serif-tc);
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: "Noto Serif TC", "Source Han Serif TC", "PMingLiU", serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family:
-    var(--font-noto-sans-tc),
     "Noto Sans TC",
     "PingFang TC",
     "Microsoft JhengHei",
@@ -47,7 +46,6 @@ h2,
 h3,
 .font-serif {
   font-family:
-    var(--font-noto-serif-tc),
     "Noto Serif TC",
     "Source Han Serif TC",
     "PMingLiU",

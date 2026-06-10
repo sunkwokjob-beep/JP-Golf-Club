@@ -1,22 +1,28 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BadgeCheck, MessageCircle, ShieldCheck, ShoppingCart } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { LinkButton } from "@/components/ui/Button";
+import { ProductImage } from "@/components/products/ProductImage";
 import { formatHKD } from "@/lib/format";
+import { getCategoryLabel, getConditionLabel, getStatusLabel } from "@/lib/product-utils";
 import { routes, whatsappProductUrl } from "@/lib/routes";
 import type { Product } from "@/types/product";
 
 export function ProductDetail({ product }: { product: Product }) {
   const specs = [
     ["品牌", product.brand],
-    ["類別", product.category],
+    ["型號", product.model],
+    ["類別", getCategoryLabel(product.category)],
+    ["SKU", product.sku],
+    ["狀態", getStatusLabel(product.status)],
+    ["庫存", `${product.stock} 件`],
     ["桿身", product.specs.shaft],
     ["硬度", product.specs.flex],
     ["角度 / 套裝", product.specs.loft],
     ["長度", product.specs.length],
     ["慣用手", product.specs.handedness],
-    ["成色", product.specs.conditionGrade ?? "全新"],
+    ["成色", product.rank ?? "全新"],
+    ["來源", product.specs.origin],
   ];
 
   return (
@@ -24,20 +30,21 @@ export function ProductDetail({ product }: { product: Product }) {
       <div className="jp-container grid gap-10 lg:grid-cols-[1fr_0.9fr]">
         <div className="rounded-lg border border-line-gold/40 bg-white p-6 shadow-sm">
           <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-pearl-white">
-            <Image src={product.images[0]} alt={product.name} fill priority className="object-contain p-8" />
+            <ProductImage src={product.images[0]} alt={product.name} category={product.category} className="p-8" />
           </div>
         </div>
 
         <div>
           <div className="flex flex-wrap gap-2">
-            <Badge tone={product.condition === "new" ? "green" : "gold"}>{product.badge}</Badge>
-            <Badge tone="light">{product.condition === "new" ? "全新球杆" : "二手精選"}</Badge>
+            <Badge tone={product.condition === "new" ? "green" : "gold"}>{getConditionLabel(product.condition)}球杆</Badge>
+            {product.rank ? <Badge tone="light">Rank {product.rank}</Badge> : null}
+            <Badge tone="light">{getStatusLabel(product.status)}</Badge>
           </div>
           <p className="mt-6 text-sm font-bold uppercase tracking-[0.28em] text-champagne-gold">{product.brand}</p>
           <h1 className="mt-3 font-serif text-4xl font-black leading-tight text-jp-green md:text-5xl">{product.name}</h1>
           <div className="mt-5 flex items-end gap-3">
-            <p className="text-3xl font-black text-jp-green">{formatHKD(product.priceHKD)}</p>
-            {product.originalPriceHKD ? <p className="pb-1 text-charcoal/45 line-through">{formatHKD(product.originalPriceHKD)}</p> : null}
+            <p className="text-3xl font-black text-jp-green">{formatHKD(product.price)}</p>
+            {product.originalPrice ? <p className="pb-1 text-charcoal/45 line-through">{formatHKD(product.originalPrice)}</p> : null}
           </div>
           <p className="mt-6 leading-8 text-charcoal/75">{product.description}</p>
 
