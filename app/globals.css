@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf7;
+  --foreground: #222629;
+  --jp-green: #0f3d2e;
+  --jp-green-dark: #06281f;
+  --champagne-gold: #c6a664;
+  --pearl-white: #fafaf7;
+  --charcoal: #222629;
+  --light-grey: #e6e6e6;
+  --line-gold: #ddc993;
+  --success-green: #1d6b4f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-jp-green: var(--jp-green);
+  --color-jp-green-dark: var(--jp-green-dark);
+  --color-champagne-gold: var(--champagne-gold);
+  --color-pearl-white: var(--pearl-white);
+  --color-charcoal: var(--charcoal);
+  --color-light-grey: var(--light-grey);
+  --color-line-gold: var(--line-gold);
+  --color-success-green: var(--success-green);
+  --font-sans: var(--font-noto-sans-tc);
+  --font-serif: var(--font-noto-serif-tc);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    var(--font-noto-sans-tc),
+    "Noto Sans TC",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family:
+    var(--font-noto-serif-tc),
+    "Noto Serif TC",
+    "Source Han Serif TC",
+    "PMingLiU",
+    serif;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: rgba(198, 166, 100, 0.35);
+  color: var(--jp-green-dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+.jp-container {
+  width: min(100% - 32px, 1280px);
+  margin-inline: auto;
+}
+
+.jp-section {
+  padding-block: 72px;
+}
+
+.jp-gold-rule {
+  background: linear-gradient(90deg, transparent, rgba(198, 166, 100, 0.8), transparent);
+  height: 1px;
+}
+
+.jp-paper {
+  background:
+    radial-gradient(circle at top right, rgba(198, 166, 100, 0.14), transparent 28rem),
+    linear-gradient(180deg, #fffefa 0%, #fafaf7 100%);
+}
+
+.jp-green-panel {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(198, 166, 100, 0.22), transparent 20rem),
+    linear-gradient(135deg, #06281f 0%, #0f3d2e 70%, #174c3b 100%);
+}
+
+@media (max-width: 768px) {
+  .jp-section {
+    padding-block: 48px;
+  }
+}

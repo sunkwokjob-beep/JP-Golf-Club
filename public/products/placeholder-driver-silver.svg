@@ -1,0 +1,9 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="520" fill="#FAFAF7"/>
+  <ellipse cx="360" cy="424" rx="210" ry="24" fill="#D9D2C2"/>
+  <path d="M326 164c78-43 177-27 222 28 37 45 2 98-78 118-82 20-173-7-201-60-20-38 8-66 57-86Z" fill="#C9CED2"/>
+  <path d="M356 189c55-20 119-14 158 19" stroke="#222629" stroke-width="24" stroke-linecap="round"/>
+  <path d="M427 306 282 449" stroke="#222629" stroke-width="13" stroke-linecap="round"/>
+  <path d="M377 255h112" stroke="#C6A664" stroke-width="9" stroke-linecap="round"/>
+  <text x="394" y="242" fill="#222629" font-family="Arial" font-size="38" font-weight="700">Qi10</text>
+</svg>

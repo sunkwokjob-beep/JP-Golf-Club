@@ -1,0 +1,15 @@
+<svg width="440" height="160" viewBox="0 0 440 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="440" height="160" fill="#FAFAF7"/>
+  <path d="M76 31c-2 38-5 61-10 70-5 10-13 15-25 15-8 0-15-3-21-8l7-15c5 4 10 6 16 6 6 0 11-3 14-8 3-6 6-26 8-60h11Z" fill="#0F3D2E"/>
+  <path d="M97 31h45c18 0 29 9 29 24 0 12-7 23-19 30-10 6-23 9-38 9h-15l-5 37H75l22-100Zm17 48h11c18 0 29-8 29-21 0-8-6-12-17-12h-22l-1 33Z" fill="#0F3D2E"/>
+  <path d="M178 23c39 16 53 41 43 75-6 19-20 35-43 49l-7-10c18-13 29-27 33-43 8-28-4-48-36-61l10-10Z" fill="#C6A664"/>
+  <circle cx="193" cy="91" r="18" fill="#FAFAF7" stroke="#C6A664" stroke-width="5"/>
+  <g fill="#C6A664">
+    <circle cx="186" cy="86" r="2.5"/><circle cx="195" cy="84" r="2.5"/><circle cx="202" cy="91" r="2.5"/>
+    <circle cx="188" cy="96" r="2.5"/><circle cx="197" cy="99" r="2.5"/>
+  </g>
+  <path d="M88 137h84l-42 11-42-11Z" fill="#C6A664"/>
+  <text x="235" y="66" fill="#0F3D2E" font-family="serif" font-size="34" font-weight="700" letter-spacing="6">極品高爾夫</text>
+  <path d="M236 78h158" stroke="#C6A664" stroke-width="2"/>
+  <text x="257" y="111" fill="#A57E32" font-family="serif" font-size="24" letter-spacing="3">JP Golf Club</text>
+</svg>

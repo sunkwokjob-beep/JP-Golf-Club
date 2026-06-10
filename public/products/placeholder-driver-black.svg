@@ -1,0 +1,9 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="520" fill="#FAFAF7"/>
+  <ellipse cx="360" cy="424" rx="210" ry="24" fill="#D9D2C2"/>
+  <path d="M305 152c88-56 197-32 248 35 32 42-3 91-76 111-86 24-180-2-209-57-18-35-2-63 37-89Z" fill="#111414"/>
+  <path d="M341 179c58-27 132-13 166 31" stroke="#48504A" stroke-width="28" stroke-linecap="round"/>
+  <path d="M432 306 283 449" stroke="#222629" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="483" cy="240" r="18" fill="#C6A664"/>
+  <text x="354" y="254" fill="#FAFAF7" font-family="Arial" font-size="42" font-weight="700">PING</text>
+</svg>
