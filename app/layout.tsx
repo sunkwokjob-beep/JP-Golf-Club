@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { TopAnnouncementBar } from "@/components/layout/TopAnnouncementBar";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
@@ -32,10 +30,7 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant" className="h-full antialiased">
       <body className="min-h-full bg-pearl-white text-charcoal">
-        <TopAnnouncementBar />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

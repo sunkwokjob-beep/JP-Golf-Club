@@ -24,7 +24,7 @@ export function ProductImage({
       fill
       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
       className={`object-contain ${className}`}
-      onError={() => setImageSrc(getProductImageFallback(category))}
+      onError={() => setImageSrc(getProductImageFallback(category, imageSrc))}
       unoptimized
     />
   );

@@ -1,4 +1,5 @@
 import { categories } from "@/data/categories";
+import { getAssetFallback } from "@/data/assets";
 import { products } from "@/data/products";
 import type { Product, ProductCondition, ProductFilters, ProductSort } from "@/types/product";
 
@@ -44,7 +45,12 @@ export function filterProducts(filters: ProductFilters) {
   });
 }
 
-export function getProductImageFallback(category: string) {
+export function getProductImageFallback(category: string, src?: string) {
+  if (src) {
+    const configuredFallback = getAssetFallback(src);
+    if (configuredFallback) return configuredFallback;
+  }
+
   if (category === "drivers") return "/products/placeholder-driver.svg";
   if (category === "fairway-woods") return "/products/placeholder-wood.svg";
   if (category === "iron-sets") return "/products/placeholder-iron.svg";

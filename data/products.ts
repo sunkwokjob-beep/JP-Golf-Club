@@ -1,7 +1,9 @@
 import type { Product } from "@/types/product";
 
-function image(slug: string) {
-  return `/images/products/${slug}-main.webp`;
+const PRODUCT_IMAGE_PATH = "/images/products";
+
+function productImage(filename: string) {
+  return `${PRODUCT_IMAGE_PATH}/${filename}`;
 }
 
 export const products: Product[] = [
@@ -20,7 +22,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 3,
     status: "available",
-    images: [image("titleist-gt2-driver")],
+    images: [productImage("product-titleist-gt2-driver-main.jpg")],
     tags: ["新品到港", "低重心", "高容錯"],
     specs: {
       clubType: "Driver",
@@ -55,7 +57,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 2,
     status: "available",
-    images: [image("ping-g430-max-driver")],
+    images: [productImage("product-ping-g430-max-driver-main.jpg")],
     tags: ["高容錯", "人氣型號", "新品"],
     specs: {
       clubType: "Driver",
@@ -90,7 +92,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 4,
     status: "available",
-    images: [image("taylormade-qi10-driver")],
+    images: [productImage("product-taylormade-qi10-driver-main.jpg")],
     tags: ["最新型號", "球速表現", "新品"],
     specs: {
       clubType: "Driver",
@@ -125,7 +127,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 2,
     status: "available",
-    images: [image("jp-forged-irons-set")],
+    images: [productImage("product-jp-forged-irons-set-main.jpg")],
     tags: ["鍛造手感", "日系鐵桿", "新品"],
     specs: {
       clubType: "Iron Set",
@@ -160,7 +162,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 1,
     status: "available",
-    images: [image("scotty-cameron-select-newport-2")],
+    images: [productImage("product-scotty-newport2-main.jpg")],
     tags: ["A 級成色", "收藏人氣", "二手精選"],
     specs: {
       clubType: "Putter",
@@ -195,7 +197,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 1,
     status: "available",
-    images: [image("callaway-paradym-fairway-wood")],
+    images: [productImage("product-callaway-paradym-fairway-wood-main.jpg")],
     tags: ["精選二手", "球道木", "性價比"],
     specs: {
       clubType: "Fairway Wood",
@@ -230,7 +232,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 1,
     status: "reserved",
-    images: [image("xxio-12-iron-set")],
+    images: [productImage("product-xxio-12-iron-set-main.jpg")],
     tags: ["輕量易打", "A 級成色", "女士/長青熱門"],
     specs: {
       clubType: "Iron Set",
@@ -265,7 +267,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 2,
     status: "available",
-    images: [image("srixon-utility-hybrid")],
+    images: [productImage("product-srixon-utility-hybrid-main.jpg")],
     tags: ["Utility", "長鐵替代", "二手精選"],
     specs: {
       clubType: "Hybrid",
@@ -300,7 +302,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 5,
     status: "available",
-    images: [image("vokey-sm10-wedge")],
+    images: [productImage("product-vokey-sm10-wedge-main.jpg")],
     tags: ["短桿控制", "新品", "高旋轉"],
     specs: {
       clubType: "Wedge",
@@ -334,7 +336,7 @@ export const products: Product[] = [
     currency: "HKD",
     stock: 0,
     status: "sold",
-    images: [image("mizuno-pro-245-irons")],
+    images: [productImage("product-mizuno-pro-245-irons-main.jpg")],
     tags: ["日系熱賣", "已售出", "A 級成色"],
     specs: {
       clubType: "Iron Set",

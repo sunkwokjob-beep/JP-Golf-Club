@@ -1,21 +1,27 @@
-import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { LinkButton } from "@/components/ui/Button";
+import { ManagedImage } from "@/components/ui/ManagedImage";
+import { getAssetById } from "@/data/assets";
 import { routes, whatsappProductUrl } from "@/lib/routes";
 
 export function HeroSection() {
+  const desktopHero = getAssetById("hero-desktop");
+  const mobileHero = getAssetById("hero-mobile");
+
   return (
     <section className="relative min-h-[620px] overflow-hidden bg-pearl-white">
-      <Image
-        src="/brand/hero-jp-golf-desktop.png"
+      <ManagedImage
+        src={desktopHero?.file ?? "/images/banners/hero-jp-golf-desktop.jpg"}
+        fallbackSrc={desktopHero?.fallbackFile}
         alt="極品高爾夫日本直採高爾夫球杆主視覺"
         fill
         sizes="100vw"
         className="hidden object-cover md:block"
         priority
       />
-      <Image
-        src="/brand/hero-jp-golf-mobile.png"
+      <ManagedImage
+        src={mobileHero?.file ?? "/images/banners/hero-jp-golf-mobile.jpg"}
+        fallbackSrc={mobileHero?.fallbackFile}
         alt="極品高爾夫日本直採高爾夫球杆手機主視覺"
         fill
         sizes="100vw"

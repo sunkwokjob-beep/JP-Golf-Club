@@ -1,8 +1,10 @@
-import Image from "next/image";
 import { BadgeCheck, MapPinned, ShieldCheck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ManagedImage } from "@/components/ui/ManagedImage";
+import { getAssetById } from "@/data/assets";
 
 export function BrandStorySection() {
+  const brandStoryImage = getAssetById("brand-story-japan-sourcing");
   const items = [
     { title: "日本直採", copy: "我們親自追蹤日本各大高爾夫市場與專門店，嚴選新款與優質二手球杆。", icon: MapPinned },
     { title: "正品保證", copy: "所有商品均會檢查來源、序號、外觀與配件，讓你放心購買、安心使用。", icon: ShieldCheck },
@@ -13,7 +15,14 @@ export function BrandStorySection() {
     <section className="jp-section bg-white">
       <div className="jp-container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative overflow-hidden rounded-lg border border-line-gold/40 bg-pearl-white p-8">
-          <Image src="/brand/fuji-texture-placeholder.svg" alt="日本山景" width={900} height={420} className="w-full opacity-80" />
+          <ManagedImage
+            src={brandStoryImage?.file ?? "/images/brand/brand-story-japan-sourcing.jpg"}
+            fallbackSrc={brandStoryImage?.fallbackFile}
+            alt="日本採購與高爾夫球杆甄選形象"
+            width={900}
+            height={560}
+            className="aspect-[16/10] w-full rounded-md object-cover opacity-90"
+          />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-pearl-white to-transparent p-8">
             <p className="font-serif text-3xl font-black text-jp-green">日本甄選・品質如一</p>
           </div>
